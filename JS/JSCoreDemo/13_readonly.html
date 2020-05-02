@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			"use strict"
+			var eric = {
+				eid:1001,
+				ename:"eilike"
+			};
+			//ES5:关闭eric对象上eid属性中"可修改"开关
+			Object.defineProperty(eric,"eid",{
+				writable:false
+			})
+			eric.eid = 1002;//严格模式报错:eid只读
+			console.log(eric);
+			
+		</script>
+	</body>
+</html>

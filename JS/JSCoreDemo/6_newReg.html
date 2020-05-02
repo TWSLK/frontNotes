@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr = ["紫烟","白鹭","青天"];
+			var reg = new RegExp(arr.join("|"));
+			//定义规则:6位数字
+			var reg1 = /\d{6}/;
+			//如果用规则验证用户输入的密码,通过
+			if(reg.test(pwd)==true){
+				//在页面上显示,验证通过
+				document.write(`<h1>验证通过</h1>`);
+			}else{
+				//否则,提示密码格式不正确
+				alert("密码不正确");
+			}
+			
+			
+		</script>
+	</body>
+</html>

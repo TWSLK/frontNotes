@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 默认样式设置 */
+			*{
+				margin:0;
+				padding:0;
+			}
+			.box{
+				width: 200px;
+				height: 200px;
+				background:blue;
+				/* css前缀写法 在IE6中才能识别 */
+				_background:red;
+				-background:red;
+				/* IE6、7可识别 */
+				*background:#000;
+				/* IE8、9可识别 */
+				background:red\0;
+				/* IE所有浏览器都支持 */
+				background:red\9;
+			}
+			
+			/* 如果使用特殊字符没有办法区分IE8、9 使用伪类 */
+			element{
+				/* IE8 */
+				color:#333\9;
+				 /* IE7 */
+				*color:#111; 
+				 /* IE6 */
+				_color:#666;
+			}
+			:root element{
+				/* IE9 */
+				color:#667;
+			}
+		</style>
+	</head>
+	<body>
+	</body>
+</html>

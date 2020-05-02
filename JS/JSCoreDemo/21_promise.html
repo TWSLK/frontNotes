@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function one(){
+				//创建一个盒子保存第一个任务的代码
+				return new Promise(function(open){
+					setTimeout(function(){
+						console.log(1);
+						open();
+					},5000);
+				})				
+			}
+			
+			function two(){
+				return new Promise(function(open){
+					setTimeout(function(){
+						console.log(2);
+						open();
+					},3000);
+				}
+			}
+			
+			function three(){
+				return new Promise(function(open){
+					setTimeout(function(){
+						console.log(3);
+						open();
+					},7000);
+				}
+			}
+			function done(){
+				console.log("end");
+			}
+			// one(two(three))
+			
+			one().then(two).then(three).then(function(){
+				console.log("end");
+			})
+			
+		</script>
+		
+	</body>
+</html>

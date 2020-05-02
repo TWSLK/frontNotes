@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#d1{
+				width: 200px;
+				height: 200px;
+				/* 线性渐变 */
+				background-image: linear-gradient(to right,#f00 0px,#ff0 50px,pink 100px,#0ff 150px,#00f 200px);
+			}
+			#d2{
+				width: 200px;
+				height: 200px;
+				margin-top: 20px;
+				background-image: radial-gradient(100px at 100px,#f00 0px,#ff0 50px,pink 100px,#0ff 150px,#00f 200px);
+			}
+			#d3{
+				width: 200px;
+				height: 200px;
+				margin-top: 20px;
+				background-image:repeating-linear-gradient(
+				to bottom,
+				#000 0px,
+				#ff0 25px,
+				#000 50px
+				);
+			}
+			#d4{
+				width: 200px;
+				height: 200px;
+				margin-top: 20px;
+				background-image:repeating-radial-gradient(
+				50px at center center,
+				#000 0px,
+				#ff0 25px,
+				#000 50px
+				);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="d1"></div>
+		<div id="d2"></div>
+		<div id="d3"></div>
+		<div id="d4"></div>
+	</body>
+</html>

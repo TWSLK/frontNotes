@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			"use strict"
+			//严格模式下,普通函数调用中的this不指向window 而指向undefined
+			function Student(sname,sage){
+				this.sname = sname;
+				this.sage = sage;
+			}
+			var lilei = Student("lilei",11);
+			console.log(lilie);
+			console.log(window);
+		</script>
+	</body>
+</html>

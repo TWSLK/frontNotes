@@ -1,0 +1,23 @@
+@mixin my_border{
+	border:2px solid #f00;
+	border-radius: 50%;
+	outline: 0;
+}
+
+@import "mycolor";
+
+$jd_red:#f10215;
+p{
+	color:$jd_red;
+	@include my_border;
+}
+.my-rounded{
+	color:#ded;
+}
+.rounded-shadow{
+	@extend .my-rounded;
+}
+
+div{
+	background: $jd_red;
+}

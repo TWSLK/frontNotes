@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//实现省市区联动
+			var cities = []
+			
+			//1.选中省份列表中的一个省份,获得选中省份对应的子数组城市列表
+			//查找触发事件的元素:name="provs"
+			var selProvs = document.getElementsByName("provs")[0];
+			//绑定事件处理函数
+			//当selProvs的选中项改变时
+			selProvs.onchange = function(){
+				var selProvs = this;
+				//获得当前选中项的下标位置:selectedIndex
+				var i = selProvs.selectedIndex;
+				if(i>0){
+					//获得当前省份对应的城市列表子数组
+					var cts = cities[i-1];
+					//2.将子数组中的城市转为option加入到第二个select中
+					var frag = document.createDocumentFragment();
+					//在遍历之前,应该先添加一个<option>-请选择-,然后再添加有意义的城市的内容
+					var opt = document.createElement("option");
+					opt.innerHTML = "-请选择-";
+					frag.appendChild(opt);
+					//遍历子数组中每个城市对象
+					for(var c of cts){
+						//每遍历一个城市对象,就创建一个option元素对象,并加入文档片段中,同时设置option的内容为当前城市名
+						var opt = document.createElement("option");
+						opt.innerHTML = c.name;
+						frag.appendChild(opt);
+					}
+					//将整个文档片段加入第二个select中
+					var selCts = document.getElementsByName("cities")[0];
+					//在追加option之前,应该先删除旧的所有option(清空selCts的内容)
+					selCts.innerHTML = "";
+					selCts.appendChild(frag);
+					//将第二个select显示出来(清除class)
+					selCts.className = "";
+				}else{
+					//将select隐藏 恢复原来的样子
+					selCts.className = "hide";
+				}
+				
+			}
+		</script>
+	</body>
+</html>

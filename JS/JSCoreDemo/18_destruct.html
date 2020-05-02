@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//1.数组解构
+			var date = [2019,2,2];
+			var [y,m,d] = date;
+			console.log(y,m,d);
+			//2.对象解构
+			var user = {
+				uid:1001,
+				uname:"dingding",
+				sex:1,
+				signin:function(){
+					console.log("登录...");
+				},
+				signout:function(){
+					console.log("注销...");
+				},
+				signup:function(){
+					console.log("注册...");
+				}
+			}
+			var {uid:uid,signup:signup} = user;
+			var {uid,signup} = user;
+			//3.参数解构
+			//定义形参列表时,就用对象结构定义
+			function ajax({
+				//与顺序无关
+				url:url,
+				type:type,
+				data:data,
+				dataType:dataType
+			}){
+				 console.log(1)
+			}
+		</script>
+	</body>
+</html>

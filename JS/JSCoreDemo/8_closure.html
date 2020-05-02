@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function parent(){
+				var total = 1000;
+				return function(x){
+					total -= x;
+					console.log(`花了${x}元,还剩${total}元`);
+				}
+			}		
+		</script>
+	</body>
+</html>

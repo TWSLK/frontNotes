@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var str = "you can you up";
+			str = str.replace(/\b[a-z]/ig,function(kw){
+				console.log(`回调函数自动被replace调用一次,窜入参数kw:${kw},返回:${kw.toUpperCase()}`);
+				return kw.toUpperCase();
+			})
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<button @click="add">click({{n}})</button>
+		</div>
+		<script type="text/javascript">
+			var data = {
+				n:0
+			}
+			var vm = new Vue({
+				el:"#app",
+				data:data,
+				methods:{
+					add:function(){
+						this.n++;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

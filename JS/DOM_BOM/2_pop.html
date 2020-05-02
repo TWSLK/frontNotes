@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#pop{
+				width:200px;
+				height: 200px;
+				background: #f00;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="pop"></div>
+		<script type="text/javascript">
+			pop.onclick = function(e){
+				
+			}
+			//实现定义开关
+			var canMove = false;//开始时暂时不可移动
+			//定义变量保存拖拽开始时鼠标在图片内的相对偏移距离
+			var offsetX,offsetY;
+			//当鼠标在pop上按下时
+			pop.onmousedown = function(e){
+				canMove = true;			//打开开关
+				//当按下鼠标打开开关时,立刻记录在图片内的相对偏移距离
+				offsetX = e.offsetX;
+				offsetY = e.offsetY;
+			}
+			//当鼠标在窗口有中移动时
+			window.onmousemove = function(){
+				//只有打开开关时才同时改变pop位置
+				if(canMove==true){
+					//改变pop位置
+					//先获取鼠标相对于文档显示区的坐标
+					var left = e.clientX;
+					var top = e.clientY;
+					//在设置pop的left和top与鼠标的位置相同
+					pop.style.left = left - offsetX + "px";
+					pop.style.top = top - offsetY + "px";
+
+				}
+			}
+			//当鼠标在pop上抬起时
+			pop.onmouseup = function(){
+				canMove = false;			//关闭开关
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//口诀:
+			//1.用class{}包裹构造函数和原型对象方法
+			class Student{
+				//2.构造函数名提升成类型名,所有构造函数更名为constructor
+				constructor(sname,sage){
+					this.sname = sname;
+					this.sage = sage;
+				}
+				//3.所有方法不再需要prototype前缀,不再需要=function
+				intr(){
+					console.log(`I'm${this.sname},I'm${this.sage}`);
+				}
+			}
+			//继承
+			class Monitor extends Student{
+				super(sname,sage);
+				this.position = position;
+			}
+			var lilei = new Student("LiLei",11);
+		</script>
+	</body>
+</html>
